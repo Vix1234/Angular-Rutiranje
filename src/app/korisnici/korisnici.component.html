@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <a
+        [routerLink]="['/korisnici', korisnik.id, korisnik.ime]"
+          href="#"
+          class="list-group-item"
+          *ngFor="let korisnik of korisnici">
+          {{ korisnik.ime }}
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- <app-korisnik></app-korisnik> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <a
+          [routerLink]="['/serveri', server.id]"
+          [queryParams]="{dozvoliPromjenu: server.id === 3 ? '1':'0'}"
+          fragment="ucitavanje"
+          href="#"
+          class="list-group-item"
+          *ngFor="let server of serveri">
+          {{ server.ime }}
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <router-outlet></router-outlet>
+      <!-- <app-promeni-server></app-promeni-server>
+      <hr>
+      <app-server></app-server> -->
+    </div>
+  </div>
+  
