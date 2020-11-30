@@ -12,6 +12,8 @@ import { PromijeniServerComponent } from './serveri/promijeni-server/promijeni-s
 import { ServerComponent } from './serveri/server/server.component';
 import { KorisnikComponent } from './korisnici/korisnik/korisnik.component';
 import { ServeriService } from './serveri/serveri.service';
+import { LoginComponent } from './autentifikacija/login/login.component';
+import { SignupComponent } from './autentifikacija/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ServeriService } from './serveri/serveri.service';
     ServeriComponent,
     PromijeniServerComponent,
     ServerComponent,
-    KorisnikComponent
+    KorisnikComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
