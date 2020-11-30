@@ -7,16 +7,21 @@ import { PromijeniServerComponent } from "./serveri/promijeni-server/promijeni-s
 import { KorisniciComponent } from "./korisnici/korisnici.component";
 import { KorisnikComponent } from "./korisnici/korisnik/korisnik.component";
 import { NijePronadjenoComponent } from "./nije-pronadjeno/nije-pronadjeno.component";
+import { LoginComponent } from './autentifikacija/login/login.component';
+import { SignupComponent } from './autentifikacija/signup/signup.component';
+import { ZastitaService } from './zastita.service';
 
 const routes:Routes = [
   {path: '', component: PocetnaComponent},
-  {path: 'serveri', component: ServeriComponent, children:[
+  {path: 'serveri', component: ServeriComponent, canActivate: [ZastitaService], children:[
     {path: ':id', component: ServerComponent},
     {path: ':id/promijeni', component: PromijeniServerComponent}  
   ]},
   {path: 'korisnici', component: KorisniciComponent, children: [
     {path: ':id/:ime', component: KorisnikComponent}
   ]},
+  {path:'login', component: LoginComponent},
+  {path:'signup', component: SignupComponent},
   {path: 'nijepronadjena' , component: NijePronadjenoComponent},
   {path: '**' , redirectTo: '/nijepronadjena'}
 ];
